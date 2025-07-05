@@ -48,7 +48,40 @@ const Signup = () => {
             Sign In
           </Link>
         </p>
-        {/*  program hold  */}
+        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+        <form onSubmit={handleSubmit(create)}>
+          <div className="space-y-5">
+            <input
+              label="Full name"
+              placeholder="Enter your full name"
+              {...register("name", { required: true })}
+            />
+            <input
+              label="Email: "
+              placeholder="Enter your email"
+              type="email"
+              {...register("email", {
+                required: true,
+                validate: {
+                  matchPatern: (value) =>
+                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                    "Email address must be a valid address",
+                },
+              })}
+            />
+            <input
+              label="Password: "
+              type="password"
+              placeholder="Enter your password"
+              {...register("password", {
+                required: true,
+              })}
+            />
+            <button type="submit" className="w-full">
+              Create Acoount
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
