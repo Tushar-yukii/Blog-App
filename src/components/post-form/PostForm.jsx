@@ -54,7 +54,11 @@ const PostForm = ({ post }) => {
       }
     }
   };
-     
+     const slugTransform = useCallback(()=>{
+        if(){
+          
+        }
+     },[])
   
   return <div>postform</div>;
 };
