@@ -51,11 +51,10 @@ const Signup = () => {
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
         <form onSubmit={handleSubmit(create)}>
           <div className="space-y-5">
-            <input
-              label="Full name"
+          <input   label="Full name"
               placeholder="Enter your full name"
               {...register("name", { required: true })}
-            />
+              />
             <input
               label="Email: "
               placeholder="Enter your email"
