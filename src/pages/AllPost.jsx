@@ -17,7 +17,7 @@ const AllPost = () => {
             <div key={post.$id} className="p-2 w-1/4">
               <PostCard post={post} />
             </div>
-          ))}
+          ))}  
         </div>
       </Container>
     </div>
