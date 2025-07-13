@@ -6,7 +6,7 @@ import LogoutBtn from "./Header/LogoutBtn";
 import RTE from "./RTE";
 import Sighup from "./Sighup";
 import Login from "../pages/Login";
-import Post from "./Post";
+// import Post from "./Post";
 import PostForm from "./post-form/PostForm";
 import PostCard from "./PostCard";
 import AuthLayout from "./AuthLayout";
@@ -19,7 +19,7 @@ export {
   RTE,
   Sighup,
   Login,
-  Post,
+  // Post,
   PostForm,
   PostCard,
   AuthLayout,
