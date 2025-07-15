@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import authService from "../appwrite/auth";
-import { data, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../store/authSlice";
-import { Button, input, Logo } from "react-redux";
+import { Button, Input, Logo } from "react-redux";
 import { useDispatch } from "react-redux";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -51,11 +51,12 @@ const Signup = () => {
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
         <form onSubmit={handleSubmit(create)}>
           <div className="space-y-5">
-          <input   label="Full name"
+            <Input
+              label="Full name"
               placeholder="Enter your full name"
               {...register("name", { required: true })}
-              />
-            <input
+            />
+            <Input
               label="Email: "
               placeholder="Enter your email"
               type="email"
@@ -68,7 +69,7 @@ const Signup = () => {
                 },
               })}
             />
-            <input
+            <Input
               label="Password: "
               type="password"
               placeholder="Enter your password"
@@ -76,9 +77,9 @@ const Signup = () => {
                 required: true,
               })}
             />
-            <button type="submit" className="w-full">
+            <Button type="submit" className="w-full">
               Create Acoount
-            </button>
+            </Button>
           </div>
         </form>
       </div>
