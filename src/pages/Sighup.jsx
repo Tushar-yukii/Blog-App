@@ -1,5 +1,5 @@
 import React from 'react'
-import {Sighup as Sighupcomponents} from '../components'
+import {Signup as Sighupcomponents} from '../components'
 const Sighup = () => {
   return (
     <div className='py-8'> 

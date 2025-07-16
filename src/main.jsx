@@ -6,10 +6,13 @@ import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { BrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import { AuthLayout, Login, Sighup } from "./components/index.js";
+import { AuthLayout, Login } from "./components/index.js";
+
+import AddPost from "./pages/AddPost.jsx";
 import AllPost from "./pages/AllPost.jsx";
 import Post from "./pages/Post.jsx";
 import EditPost from "./pages/EditPost.jsx";
+import Sighup from "./pages/Sighup.jsx";
 
 const router = BrowserRouter([
   {
@@ -56,10 +59,12 @@ const router = BrowserRouter([
       },
       {
         path: "/edit-post/:slug",
-        element: <AuthLayout authentication> 
-        {" "}
-        <EditPost />
-        </AuthLayout>,
+        element: (
+          <AuthLayout authentication>
+            {" "}
+            <EditPost />
+          </AuthLayout>
+        ),
       },
       {
         path: "/post/:slug",
