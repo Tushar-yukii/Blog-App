@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const PostForm = ({ post }) => {
-  const { register, handleSubmit, watch, setValue, control, getVlaue } =
+  const { register, handleSubmit, watch, setValue, control, getValues } =
     useForm({
       defaultValues: {
         title: post?.title || "",
-        slug: slug?.slug || "",
+        slug: post?.$id || "",
         content: post?.content || "",
         status: post?.status || "active",
       },
@@ -55,15 +55,14 @@ const PostForm = ({ post }) => {
     }
   };
   const slugTransform = useCallback((value) => {
-    if (value && typeof value === "string") {
+    if (value && typeof value === "string")
       return value
         .trim()
         .toLowerCase()
         .replace(/^[a-zA-Z\d\s]+/g, "-")
         .replace(/\s/g, "-");
 
-      return "";
-    }
+    return "";
   }, []);
 
   React.useEffect(() => {
