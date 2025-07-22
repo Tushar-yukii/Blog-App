@@ -71,9 +71,9 @@ const Login = () => {
                 required: true,
               })}
             />
-            <button type="submit" className="w-full">
+            <Button type="submit" className="w-full">
               Sign in
-            </button>
+            </Button>
           </div>
         </form>
       </div>
