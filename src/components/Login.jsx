@@ -50,7 +50,7 @@ const Login = () => {
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
         <form onSubmit={handleSubmit(login)} className="mt-8">
           <div className="space-y-5">
-            <input
+            <Input
               label="Email: "
               placeholder="Enter your email"
               type="email"
@@ -63,7 +63,7 @@ const Login = () => {
                 },
               })}
             />
-            <input
+            <Input
               label="Password: "
               type="password"
               placeholder="Enter your password"
