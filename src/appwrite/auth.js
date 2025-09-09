@@ -7,7 +7,7 @@ export class AuthService {
 
   constructor() {
     this.client
-      .setEndpoint(conf.appwriteUrl)
+      .setEndpoint('http://cloud.appwrite.io.v1')
       .setProject(conf.appwriteProjectId);
     this.account = new Account(this.client);
   }
@@ -38,15 +38,17 @@ export class AuthService {
       throw error;
     }
   }
-  async getCurrentUser() {
-    try {
-      return await this.account.get();
-    } catch (error) {
-      // throw error
-      console.log("appwrite service :: getcurrentuser :: error", error);
+  
+    async getCurrentUser() {
+        try {
+            return await this.account.get();
+        } catch (error) {
+            console.log("Appwrite serive :: getCurrentUser :: error", error);
+        }
+
+        return null;
     }
-    return null;
-  }
+
   async logout() {
     try {
       await this.account.deleteSessions();
