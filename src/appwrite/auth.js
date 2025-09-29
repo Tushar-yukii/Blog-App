@@ -7,12 +7,10 @@ export class AuthService {
 
   constructor() {
     this.client
-      .setEndpoint("https://fra.cloud.appwrite.io/v1") // use from conf.js
-      .setProject(conf.appwriteProjectId); //  correctly pulled from env
+      .setEndpoint("https://fra.cloud.appwrite.io/v1") // ✅ use value from conf.js
+      .setProject(conf.appwriteProjectId); // ✅ also from conf.js
 
     this.account = new Account(this.client);
-
-    console.log(" Appwrite configured with Project ID:", conf.appwriteProjectId);
   }
 
   async createAccount({ email, password, name }) {
@@ -25,6 +23,7 @@ export class AuthService {
       );
 
       if (userAccount) {
+        // auto login after signup
         return this.login({ email, password });
       }
       return userAccount;
@@ -46,8 +45,8 @@ export class AuthService {
       return await this.account.get();
     } catch (error) {
       console.log("Appwrite service :: getCurrentUser :: error", error);
+      return null;
     }
-    return null;
   }
 
   async logout() {
